@@ -28,7 +28,7 @@ import {install} from 'node-themekit';
 install(); // installs binary to ./node_modules/node-themekit/.bin
 ```
 
-#### Example 2
+#### Run commands
 
 Run Theme Kit commands.
 
