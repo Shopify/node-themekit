@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "shopify/node"
+  ],
+  "plugins": [
+    ["add-shopify-header", {
+      "files": ["src/index.js", "src/install.js"]
+    }]
+  ]
+}

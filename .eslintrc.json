@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "plugin:shopify/esnext",
+    "plugin:shopify/node",
+    "plugin:shopify/mocha"
+  ],
+  "rules": {
+    "comma-dangle": 0
+  }
+}
