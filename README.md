@@ -8,7 +8,7 @@ Node version of Theme Kit
 - [Examples](#examples)
 - [API](#api)
     + [`install()`](#themekitinstall)
-    + [`commands(args)`](#themekitcommands)
+    + [`commands(args)`](#themekitcommandsargs)
 - [License](http://github.com/Shopify/node-themekit/blob/master/LICENSE.md)
 
 ## Installation
