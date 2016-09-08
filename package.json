@@ -13,7 +13,7 @@
     "babel": "6.5.2",
     "babel-cli": "6.11.4",
     "babel-core": "6.13.2",
-    "babel-plugin-add-shopify-header": "1.0.4",
+    "babel-plugin-add-shopify-header": "1.0.5",
     "babel-preset-shopify": "13.0.0",
     "babel-register": "6.11.6",
     "eslint": "3.3.1",

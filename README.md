@@ -1,15 +1,14 @@
-# node-themekit
+# Theme Kit
 
-Node version of ThemeKit
+Node version of Theme Kit
 
 ## Table Of Contents
 
 - [Installation](#installation)
 - [Examples](#examples)
 - [API](#api)
-    + [`const instance = nodeThemekit([options])`](#const-instance-nodethemekit-options)
-    + [`someFunction(variable, callback)`](#somefunction-variable-callback)
-    + [`anotherFunction()`](#anotherfunction)
+    + [`install()`](#themekitinstall)
+    + [`commands(args)`](#themekitcommands)
 - [License](http://github.com/Shopify/node-themekit/blob/master/LICENSE.md)
 
 ## Installation
@@ -19,50 +18,44 @@ $ npm install node-themekit
 
 ## Examples
 
-#### Example 1
+#### Install binary
 
-Decribe Example 1. Stumptown selfies put a bird on it occupy, scenester ramps jean shorts next level kale chips seitan:
+Programatically install Theme Kit binary.
 
 ```javascript
-import nodeThemekit from 'node-themekit';
+import {install} from 'node-themekit';
 
-/********************************/
-/********************************/
-/* -- PUT AN EXAMPLE IN HERE -- */
-/********************************/
-/********************************/
+install(); // installs binary to ./node_modules/node-themekit/.bin
 ```
 
 #### Example 2
 
-Decribe Example 1. Stumptown selfies put a bird on it occupy, scenester ramps jean shorts next level kale chips seitan:
+Run Theme Kit commands.
 
 ```javascript
-import nodeThemekit from 'node-themekit';
+import {commands} from 'node-themekit';
 
-/********************************/
-/********************************/
-/* -- PUT AN EXAMPLE IN HERE -- */
-/********************************/
-/********************************/
+// remove specific files from development environment
+commands(['remove', '-env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']);
+
+// upload specific files to development environment
+commands(['upload', '-env', 'development', 'snippets/pagination.liquid']);
+
+// deploy all files to development environment
+commands(['deploy', '-env', 'development']);
 ```
 
 ## API
 
-#### `const instance = nodeThemekit([options]);`
+#### `themekit.install()`
 
-Options you can pass `nodeThemekit`:
-- `option1` - Replace with a description of option 1
-- `option2` - Replace with a description of option 2
-- `option3` - Replace with a description of option 2
+Installs Theme Kit binary based on operating system and architecture. Returns a promise with path to binary.
 
-#### `instance.someFunction(variable, callback);`
+#### `themekit.commands(args)`
 
-Replace with `someFunction` description. Hoodie post-ironic polaroid salvia, microdosing vice ethical etsy bushwick roof party swag. Farm-to-table humblebrag etsy neutra synth.
+Executes command with arguments using the Theme Kit binary. Resolves promise when completed.
 
-#### `instance.anotherFunction();`
-
-Replace with `anotherFunction` description. Tacos polaroid cronut trust fund mumblecore biodiesel viral hella helvetica actually organic. Stumptown selfies put a bird on it occupy, scenester ramps jean shorts next level kale chips seitan.
+For a complete list of commands and args: [http://themekit.cat/docs/](http://themekit.cat/docs/).
 
 ## License
 
