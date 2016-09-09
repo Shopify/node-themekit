@@ -7,8 +7,8 @@ Node version of Theme Kit
 - [Installation](#installation)
 - [Examples](#examples)
 - [API](#api)
-    + [`install()`](#themekitinstall)
-    + [`commands(args)`](#themekitcommandsargs)
+    + [`install(options, callback)`](#themekitinstall)
+    + [`commands(options, callback)`](#themekitcommandsargs)
 - [License](http://github.com/Shopify/node-themekit/blob/master/LICENSE.md)
 
 ## Installation
@@ -23,9 +23,17 @@ $ npm install node-themekit
 Programatically install Theme Kit binary.
 
 ```javascript
-import {install} from 'node-themekit';
+var install = require('node-themekit').install;
 
-install(); // installs binary to ./node_modules/node-themekit/.bin
+install({
+  logger: console.log
+}, function(err, path) {
+  if (err) {
+    return process.stdout.write(err);
+  }
+
+  return process.stdout.write('Theme Kit has been installed: ' + path + '\n');
+});
 ```
 
 #### Run commands
@@ -33,27 +41,78 @@ install(); // installs binary to ./node_modules/node-themekit/.bin
 Run Theme Kit commands.
 
 ```javascript
-import {commands} from 'node-themekit';
+var command = require('node-themekit').command;
+
+// prints themekit version information
+command({
+  args: ['version']
+}, function(err) {
+  if (err) {
+    process.stdout.write(err);
+    return;
+  }
+
+  process.stdout.write('Theme Kit command has completed.\n');
+});
 
 // remove specific files from development environment
-commands(['remove', '-env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']);
+command({
+  args: ['remove', '-env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']
+}, function(err) {
+  if (err) {
+    process.stdout.write(err);
+    return;
+  }
 
-// upload specific files to development environment
-commands(['upload', '-env', 'development', 'snippets/pagination.liquid']);
+  process.stdout.write('Theme Kit command has completed.\n');
+});
 
 // deploy all files to development environment
-commands(['deploy', '-env', 'development']);
+command({
+  args: ['deploy', '-env', 'development']
+}, function(err) {
+  if (err) {
+    process.stdout.write(err);
+    return;
+  }
+
+  process.stdout.write('Theme Kit command has completed.\n');
+});
 ```
 
 ## API
 
-#### `themekit.install()`
+#### `themekit.install(options, callback)`
 
-Installs Theme Kit binary based on operating system and architecture. Returns a promise with path to binary.
+Installs Theme Kit binary based on operating system and architecture.
 
-#### `themekit.commands(args)`
+- options `<Object>`
 
-Executes command with arguments using the Theme Kit binary. Resolves promise when completed.
+  ```javascript
+  {
+    logger: <Function>, // function to output additional info | console.log
+    baseURL: <String>, // base path to Theme Kit repo | 'https://github.com/Shopify/themekit'
+    version: <String>, // version of Theme Kit to install | '0.4.1'
+    destination: <String> // path to Theme Kit binary will be installed | '/Users/shopify/node-themekit/bin/'
+  }
+  ```
+
+- callback `<Function>`
+
+#### `themekit.commands(options, callback)`
+
+Executes command with arguments using the Theme Kit binary.
+
+- options `<Object>`
+
+  ```javascript
+  {
+    target: <String>, // path to Theme Kit binary is located | '/Users/shopify/node-themekit/bin/theme'
+    args: <Array> // arguments to execute | ['version']
+  }
+  ```
+
+- callback `<Function>`
 
 For a complete list of commands and args: [http://themekit.cat/docs/](http://themekit.cat/docs/).
 

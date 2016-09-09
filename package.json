@@ -2,30 +2,24 @@
   "name": "node-themekit",
   "version": "0.4.1",
   "description": "Node version of ThemeKit",
-  "main": "lib/index.js",
+  "main": "index.js",
   "license": "MIT",
   "author": "Shopify Inc.",
   "dependencies": {
+    "async": "2.0.1",
     "bin-wrapper": "3.0.2",
     "bluebird": "3.4.6"
   },
   "devDependencies": {
-    "babel": "6.5.2",
-    "babel-cli": "6.11.4",
-    "babel-core": "6.13.2",
-    "babel-plugin-add-shopify-header": "1.0.5",
-    "babel-preset-shopify": "13.0.0",
-    "babel-register": "6.11.6",
     "eslint": "3.3.1",
     "eslint-plugin-shopify": "14.0.0",
     "mocha": "3.0.2"
   },
   "scripts": {
-    "test": "npm run lint-allow-warning && mocha --compilers js:babel-register -u tdd test/index.js",
-    "postinstall": "node lib/install",
-    "postversion": "node lib/install",
-    "prepublish": "babel -d lib/ src/",
-    "watch": "babel -w -d lib/ src/",
+    "test": "node test/themekit-version",
+    "test-mocha": "npm run lint-allow-warning && mocha -u tdd test/index.js",
+    "postinstall": "node lib/themekit-install",
+    "postversion": "node lib/themekit-install",
     "lint": "eslint --max-warnings 0 -c .eslintrc.json src/ test/",
     "lint-allow-warning": "eslint -c .eslintrc.json src/ test/"
   },

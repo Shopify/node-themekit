@@ -8,5 +8,4 @@ test.js
 demo/
 .npmignore
 LICENSE.md
-src/
-.bin
+bin
