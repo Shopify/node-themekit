@@ -1,7 +1,7 @@
-import assert from 'assert';
+var assert = require('assert');
 
-suite('This will test node-themekit', () => {
-  test('It should do something', () => {
+suite('This will test node-themekit', function() {
+  test('It should do something', function() {
     assert.ok(true, "It's good");
   });
 });

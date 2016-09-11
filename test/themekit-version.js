@@ -1,7 +1,7 @@
-var command = require('./command');
+var command = require('../lib/command');
 
 command({
-  args: ['version']
+  args: ['version'],
 }, function(err) {
   if (err) {
     process.stdout.write(err);

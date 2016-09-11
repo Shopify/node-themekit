@@ -3,8 +3,5 @@
     "plugin:shopify/es5",
     "plugin:shopify/node",
     "plugin:shopify/mocha"
-  ],
-  "rules": {
-    "comma-dangle": 0
-  }
+  ]
 }
