@@ -1,0 +1,38 @@
+{
+  "name": "node-themekit",
+  "version": "0.4.1",
+  "description": "Node version of ThemeKit",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Shopify Inc.",
+  "dependencies": {
+    "async": "2.0.1",
+    "bin-wrapper": "3.0.2",
+    "bluebird": "3.4.6"
+  },
+  "devDependencies": {
+    "eslint": "3.3.1",
+    "eslint-plugin-shopify": "14.0.0",
+    "mocha": "3.0.2"
+  },
+  "scripts": {
+    "test": "node test/themekit-version",
+    "test-mocha": "npm run lint-allow-warning && mocha -u tdd test/index.js",
+    "postinstall": "node lib/themekit-install",
+    "postversion": "node lib/themekit-install",
+    "lint": "./node_modules/.bin/eslint --max-warnings 0 -c .eslintrc.json src/ test/",
+    "lint-allow-warning": "./node_modules/.bin/eslint -c .eslintrc.json src/ test/"
+  },
+  "keywords": [
+    "themekit",
+    "shopify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Shopify/node-themekit.git"
+  },
+  "homepage": "https://github.com/Shopify/node-themekit",
+  "bugs": {
+    "url": "https://github.com/Shopify/node-themekit/issues"
+  }
+}
