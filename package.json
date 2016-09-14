@@ -1,5 +1,5 @@
 {
-  "name": "node-themekit",
+  "name": "shopify-themekit",
   "version": "0.4.2",
   "description": "Node version of ThemeKit",
   "main": "index.js",
