@@ -4,7 +4,7 @@ command({
   args: ['version'],
 }, function(err) {
   if (err) {
-    process.stdout.write(err);
+    process.stdout.write(err + '\n');
     return;
   }
 
