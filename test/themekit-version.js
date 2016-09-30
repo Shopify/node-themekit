@@ -4,9 +4,9 @@ command({
   args: ['version'],
 }, function(err) {
   if (err) {
-    process.stdout.write(err + '\n');
+    console.error(err + '\n');
     return;
   }
 
-  process.stdout.write('Theme Kit command has completed.\n');
+  console.log('Theme Kit command has completed.\n');
 });

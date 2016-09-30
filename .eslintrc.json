@@ -3,5 +3,8 @@
     "plugin:shopify/es5",
     "plugin:shopify/node",
     "plugin:shopify/mocha"
-  ]
+  ],
+  "rules": {
+    "no-console": 0
+  }
 }
