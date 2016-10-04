@@ -29,10 +29,11 @@ install({
   logger: console.log
 }, function(err, path) {
   if (err) {
-    return process.stdout.write(err);
+    console.error(err);
+    return;
   }
 
-  return process.stdout.write('Theme Kit has been installed: ' + path + '\n');
+  console.log('Theme Kit has been installed: ' + path);
 });
 ```
 
@@ -48,11 +49,11 @@ command({
   args: ['version']
 }, function(err) {
   if (err) {
-    process.stdout.write(err);
+    console.error(err);
     return;
   }
 
-  process.stdout.write('Theme Kit command has completed.\n');
+  console.log('Theme Kit command has completed.');
 });
 
 // remove specific files from development environment
@@ -60,11 +61,11 @@ command({
   args: ['remove', '-env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']
 }, function(err) {
   if (err) {
-    process.stdout.write(err);
+    console.error(err);
     return;
   }
 
-  process.stdout.write('Theme Kit command has completed.\n');
+  console.log('Theme Kit command has completed.');
 });
 
 // deploy all files to development environment
@@ -72,11 +73,11 @@ command({
   args: ['deploy', '-env', 'development']
 }, function(err) {
   if (err) {
-    process.stdout.write(err);
+    console.error(err);
     return;
   }
 
-  process.stdout.write('Theme Kit command has completed.\n');
+  console.log('Theme Kit command has completed.');
 });
 ```
 
