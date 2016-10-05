@@ -1,4 +1,3 @@
 module.exports = {
-  install: require('./lib/install'),
-  command: require('./lib/command'),
+  command: require('./lib/command')
 };

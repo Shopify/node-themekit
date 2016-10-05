@@ -7,44 +7,31 @@ Node version of Theme Kit
 - [Installation](#installation)
 - [Examples](#examples)
 - [API](#api)
-    + [`install(options, callback)`](#themekitinstall)
     + [`commands(options, callback)`](#themekitcommandsargs)
+- [CLI](#cli)
 - [License](http://github.com/Shopify/node-themekit/blob/master/LICENSE.md)
 
 ## Installation
+
 ```bash
-$ npm install node-themekit
+$ npm install shopify-themekit
 ```
 
 ## Examples
 
-#### Install binary
+### Run commands
 
-Programatically install Theme Kit binary.
+Here are a collection of examples to run Theme Kit commands.
 
-```javascript
-var install = require('node-themekit').install;
+For a complete list of commands and args: [http://themekit.cat/docs/](http://themekit.cat/docs/).
 
-install({
-  logger: console.log
-}, function(err, path) {
-  if (err) {
-    console.error(err);
-    return;
-  }
+#### Example 1
 
-  console.log('Theme Kit has been installed: ' + path);
-});
-```
-
-#### Run commands
-
-Run Theme Kit commands.
+Print Theme Kit version info.
 
 ```javascript
-var command = require('node-themekit').command;
+var command = require('shopify-themekit').command;
 
-// prints themekit version information
 command({
   args: ['version']
 }, function(err) {
@@ -55,8 +42,15 @@ command({
 
   console.log('Theme Kit command has completed.');
 });
+```
 
-// remove specific files from development environment
+#### Example 2
+
+Remove specific files from development environment.
+
+```javascript
+var command = require('shopify-themekit').command;
+
 command({
   args: ['remove', '-env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']
 }, function(err) {
@@ -67,10 +61,17 @@ command({
 
   console.log('Theme Kit command has completed.');
 });
+```
 
-// deploy all files to development environment
+#### Example 3
+
+Deploy all files to staging environment.
+
+```javascript
+var command = require('shopify-themekit').command;
+
 command({
-  args: ['deploy', '-env', 'development']
+  args: ['deploy', '-env', 'staging']
 }, function(err) {
   if (err) {
     console.error(err);
@@ -81,26 +82,24 @@ command({
 });
 ```
 
+#### Example 4
+
+Deploy theme to production via NPM scripts.
+
+**Warning:** This example will overwrite the theme based on your `config.yml`.
+
+```json
+"dependencies": {
+  "shopify-themekit": "0.4.3"
+},
+"scripts": {
+  "deploy": "shopify-themekit replace -env production"
+}
+```
+
 ## API
 
-#### `themekit.install(options, callback)`
-
-Installs Theme Kit binary based on operating system and architecture.
-
-- options `<Object>`
-
-  ```javascript
-  {
-    logger: <Function>, // function to output additional info | console.log
-    baseURL: <String>, // base path to Theme Kit repo | 'https://github.com/Shopify/themekit'
-    version: <String>, // version of Theme Kit to install | '0.4.1'
-    destination: <String> // path to Theme Kit binary will be installed | '/Users/shopify/node-themekit/bin/'
-  }
-  ```
-
-- callback `<Function>`
-
-#### `themekit.commands(options, callback)`
+### `command(options, callback)`
 
 Executes command with arguments using the Theme Kit binary.
 
@@ -108,14 +107,28 @@ Executes command with arguments using the Theme Kit binary.
 
   ```javascript
   {
-    target: <String>, // path to Theme Kit binary is located | '/Users/shopify/node-themekit/bin/theme'
-    args: <Array> // arguments to execute | ['version']
+    args: <Array>, // arguments to execute | ['version']
+    logLevel: <String> // Set level additional output info | 'silent', 'error', 'all', 'silly'
   }
   ```
 
 - callback `<Function>`
 
+  ```javascript
+  function(error) {
+
+  }
+  ```
+
 For a complete list of commands and args: [http://themekit.cat/docs/](http://themekit.cat/docs/).
+
+## CLI
+
+```bash
+$ shopify-themekit <args>
+```
+
+This CLI component of this package is intended to be used with NPM scripts. If you plan on using the command line interface heavily, please refer to: http://themekit.cat/install/.
 
 ## License
 
