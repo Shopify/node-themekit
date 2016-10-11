@@ -14,7 +14,7 @@ Node version of [Theme Kit](http://themekit.cat/).
 ## Installation
 
 ```bash
-$ npm install shopify-themekit
+$ npm install @shopify/themekit
 ```
 
 ## Examples
@@ -30,7 +30,7 @@ For a complete list of commands and args: [http://themekit.cat/docs/](http://the
 Print Theme Kit version info.
 
 ```javascript
-var command = require('shopify-themekit').command;
+var command = require('@shopify/themekit').command;
 
 command({
   args: ['version']
@@ -49,7 +49,7 @@ command({
 Remove specific files from development environment.
 
 ```javascript
-var command = require('shopify-themekit').command;
+var command = require('@shopify/themekit').command;
 
 command({
   args: ['remove', '-env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']
@@ -68,7 +68,7 @@ command({
 Deploy all files to staging environment.
 
 ```javascript
-var command = require('shopify-themekit').command;
+var command = require('@shopify/themekit').command;
 
 command({
   args: ['deploy', '-env', 'staging']
@@ -90,7 +90,7 @@ Deploy theme to production via NPM scripts.
 
 ```json
 "dependencies": {
-  "shopify-themekit": "0.4.3"
+  "@shopify/themekit": "0.4.3"
 },
 "scripts": {
   "deploy": "shopify-themekit replace -env production"
