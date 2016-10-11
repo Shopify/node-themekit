@@ -1,6 +1,6 @@
-# Theme Kit
+# shopify-themekit
 
-Node version of Theme Kit
+Node version of [Theme Kit](http://themekit.cat/).
 
 ## Table Of Contents
 
