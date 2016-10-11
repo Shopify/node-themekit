@@ -1,4 +1,4 @@
-# shopify-themekit
+# @shopify/themekit
 
 Node version of [Theme Kit](http://themekit.cat/).
 
