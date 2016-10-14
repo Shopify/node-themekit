@@ -1,6 +1,6 @@
 {
   "name": "@shopify/themekit",
-  "version": "0.4.3",
+  "version": "0.4.7",
   "dependencies": {
     "acorn": {
       "version": "4.0.3",
@@ -364,7 +364,7 @@
     },
     "debug": {
       "version": "2.2.0",
-      "from": "debug@>=2.0.0 <3.0.0",
+      "from": "debug@latest",
       "resolved": "https://registry.npmjs.org/debug/-/debug-2.2.0.tgz"
     },
     "decamelize": {
