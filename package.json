@@ -1,6 +1,6 @@
 {
   "name": "@shopify/themekit",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Node version of ThemeKit",
   "bin": {
     "shopify-themekit": "./lib/cli.js"
