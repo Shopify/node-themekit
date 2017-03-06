@@ -1,6 +1,6 @@
 # @shopify/themekit
 
-Node version of [Theme Kit](http://themekit.cat/).
+Node version of [Theme Kit](http://shopify.github.io/themekit/).
 
 ## Table Of Contents
 
@@ -23,7 +23,7 @@ $ npm install @shopify/themekit
 
 Here are a collection of examples to run Theme Kit commands.
 
-For a complete list of commands and args: [http://themekit.cat/docs/](http://themekit.cat/docs/).
+For a complete list of commands and args: [http://shopify.github.io/themekit/commands](http://shopify.github.io/themekit/commands).
 
 #### Example 1
 
@@ -120,7 +120,7 @@ Executes command with arguments using the Theme Kit binary.
   }
   ```
 
-For a complete list of commands and args: [http://themekit.cat/docs/](http://themekit.cat/docs/).
+For a complete list of commands and args: [http://shopify.github.io/themekit/commands/](http://shopify.github.io/themekit/commands/).
 
 ## CLI
 
@@ -128,7 +128,7 @@ For a complete list of commands and args: [http://themekit.cat/docs/](http://the
 $ shopify-themekit <args>
 ```
 
-This CLI component of this package is intended to be used with NPM scripts. If you plan on using the command line interface heavily, please refer to: http://themekit.cat/install/.
+This CLI component of this package is intended to be used with NPM scripts. If you plan on using the command line interface heavily, please refer to: [http://shopify.github.io/themekit](http://shopify.github.io/themekit).
 
 ## License
 
