@@ -32,4 +32,4 @@ changing arguments to a function, adding a new function, changing the
 return value, etc), please ensure the documentation is also updated to
 reflect this. Documentation is in the `README.md`.
 
-If further documentation is needed please communicate via Github Issues.
+If further documentation is needed, please communicate via Github Issues.
