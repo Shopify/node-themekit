@@ -52,7 +52,7 @@ Remove specific files from development environment.
 var command = require('@shopify/themekit').command;
 
 command({
-  args: ['remove', '-env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']
+  args: ['remove', '--env', 'development', 'snippets/pagination.liquid', 'snippets/date.liquid']
 }, function(err) {
   if (err) {
     console.error(err);
@@ -71,7 +71,7 @@ Deploy all files to staging environment.
 var command = require('@shopify/themekit').command;
 
 command({
-  args: ['deploy', '-env', 'staging']
+  args: ['deploy', '--env', 'staging']
 }, function(err) {
   if (err) {
     console.error(err);
@@ -93,7 +93,7 @@ Deploy theme to production via NPM scripts.
   "@shopify/themekit": "0.4.3"
 },
 "scripts": {
-  "deploy": "shopify-themekit replace -env production"
+  "deploy": "shopify-themekit replace --env production"
 }
 ```
 
