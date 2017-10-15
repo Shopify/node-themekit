@@ -65,13 +65,13 @@ command({
 
 #### Example 3
 
-Deploy all files to staging environment.
+Upload all files to staging environment.
 
 ```javascript
 var command = require('@shopify/themekit').command;
 
 command({
-  args: ['deploy', '--env', 'staging']
+  args: ['upload', '--env', 'staging']
 }, function(err) {
   if (err) {
     console.error(err);
