@@ -1,11 +1,11 @@
-var command = require('../lib/command');
+const command = require('../lib/command');
 
-command({
-  args: ['version']
-}, function(err) {
-  if (err) {
-    return;
-  }
-
-  console.log('Test has completed.');
+test('Successfully calls ThemeKit', () => {
+  command({
+    args: ['version']
+  }, (err) => {
+    expect(err).toBeUndefined();
+  });
 });
+
+

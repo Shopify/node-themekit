@@ -21,9 +21,12 @@
   "scripts": {
     "postinstall": "node ./lib/cli.js install",
     "postversion": "node ./lib/cli.js install",
-    "test": "node test/themekit-version",
+    "test": "jest",
     "lint": "./node_modules/.bin/eslint --max-warnings 0 -c .eslintrc.json src/ test/",
     "lint-allow-warning": "./node_modules/.bin/eslint -c .eslintrc.json src/ test/"
+  },
+  "jest": {
+    "testMatch": ["**/test/**/*.js"]
   },
   "keywords": [
     "themekit",
