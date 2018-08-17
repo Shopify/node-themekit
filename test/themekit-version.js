@@ -1,11 +1,7 @@
 const command = require('../lib/command');
 
-test('Successfully calls ThemeKit', () => {
-  command({
-    args: ['version']
-  }, (err) => {
-    expect(err).toBeUndefined();
-  });
+test('successfully grabs themekit version from gem', async () => {
+  expect(command({args: ['version']})).resolves.toEqual('Theme Kit command finished');
 });
 
 
