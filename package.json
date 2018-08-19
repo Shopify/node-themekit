@@ -26,7 +26,9 @@
     "lint-allow-warning": "./node_modules/.bin/eslint -c .eslintrc.json src/ test/"
   },
   "jest": {
-    "testMatch": ["**/test/**/*.js"]
+    "testMatch": [
+      "**/test/**/*.js"
+    ]
   },
   "keywords": [
     "themekit",
