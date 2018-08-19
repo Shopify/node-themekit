@@ -25,11 +25,6 @@
     "lint": "./node_modules/.bin/eslint --max-warnings 0 -c .eslintrc.json src/ test/",
     "lint-allow-warning": "./node_modules/.bin/eslint -c .eslintrc.json src/ test/"
   },
-  "jest": {
-    "testMatch": [
-      "**/test/**/*.js"
-    ]
-  },
   "keywords": [
     "themekit",
     "shopify"

@@ -3,9 +3,9 @@ const {version} = require('../lib/default-config');
 
 test('successfully runs binary', async () => {
   // arrange
-  jest.spyOn(global.console, 'log');
+  global.console.log = jest.fn();
   // act
   await themekit.command({args: ['version']});
   // assert
-  expect(global.console.log).toHaveBeenCalledWith(expect.stringContaining(version));
+  expect(global.console.log).toHaveBeenLastCalledWith(expect.stringContaining(version));
 });
