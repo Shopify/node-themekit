@@ -8,14 +8,14 @@ jest.mock('child_process');
 describe(('command'), () => {
   test('passes correct args to child process', async () => {
     // arrange
-    const params = {args: ['version']};
-    const args = params.args.concat(['--no-update-notifier']);
+    const args = ['version', '--no-update-notifier'];
 
     // act
     const {spawn} = require('child_process');
-    await themekit.command(params);
+    await themekit.command('version');
 
     // assert
+    expect.assertions(1);
     expect(spawn).toBeCalledWith(
       path.join(cfg.destination, cfg.binName),
       args,
@@ -25,14 +25,15 @@ describe(('command'), () => {
 
   test('does not mutate input param', async () => {
     // arrange
-    const params = {args: ['version']};
-    const duplicate = JSON.parse(JSON.stringify(params));
+    const flags = {someFlag: true};
+    const flagsCopy = JSON.parse(JSON.stringify(flags));
 
     // act
-    await themekit.command(params);
+    await themekit.command('version', flags);
 
     // assert
-    expect(params).toMatchObject(duplicate);
+    expect.assertions(1);
+    expect(flags).toMatchObject(flagsCopy);
   });
 });
 
