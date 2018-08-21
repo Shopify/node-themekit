@@ -1,6 +1,6 @@
 const path = require('path');
 
-const cfg = require('../lib/default-config');
+const cfg = require('../lib/config');
 const themekit = require('../lib/themekit');
 
 jest.mock('child_process');
