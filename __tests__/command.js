@@ -23,6 +23,30 @@ describe(('command'), () => {
     );
   });
 
+  test('correctly deconstructs ignoredFiles flag', async () => {
+    // arrange
+    const args = [
+      'version',
+      '--ignoredFile', 'file1',
+      '--ignoredFile', 'file2',
+      '--no-update-notifier'
+    ];
+
+    // act
+    const {spawn} = require('child_process');
+    await themekit.command('version', {
+      ignoredFiles: ['file1', 'file2']
+    });
+
+    // assert
+    expect.assertions(1);
+    expect(spawn).toBeCalledWith(
+      path.join(cfg.destination, cfg.binName),
+      args,
+      {cwd: expect.any(String)},
+    );
+  });
+
   test('does not mutate input param', async () => {
     // arrange
     const flags = {someFlag: true};
