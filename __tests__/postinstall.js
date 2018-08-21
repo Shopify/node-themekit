@@ -1,5 +1,5 @@
 const themekit = require('../lib/themekit');
-const {version} = require('../lib/default-config');
+const {version} = require('../lib/config');
 
 test('successfully runs binary', async () => {
   // arrange
