@@ -83,9 +83,9 @@ describe('cleanFile', () => {
     }
 
     // act + assert
-    expect(unlink).toBeCalledWith(pathToExecutable);
     expect(removeFile).not.toThrow();
     expect(removeFileAndAccess).toThrow('ENOENT');
+    expect(unlink).toBeCalledWith(pathToExecutable);
   });
 
   test('does not throw if path does not exist', async () => {
