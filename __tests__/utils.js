@@ -56,9 +56,6 @@ describe('getFlagArrayFromObject', () => {
 });
 
 describe('cleanFile', () => {
-  beforeEach(() => {
-  });
-
   afterEach(() => {
     fsMock.restore();
   });
