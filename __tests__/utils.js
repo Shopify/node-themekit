@@ -53,6 +53,22 @@ describe('getFlagArrayFromObject', () => {
     expect(output).toHaveLength(expectedOutput.length);
     expect(output).toEqual(expect.arrayContaining(expectedOutput));
   });
+
+  test('correctly deconstructs files flag', () => {
+    // arrange
+    const input = {
+      files: ['file1', 'file2']
+    };
+    const expectedOutput = ['file1', 'file2'];
+
+    // act
+    const output = getFlagArrayFromObject(input);
+
+    // assert
+    expect(output).toBeInstanceOf(Array);
+    expect(output).toHaveLength(expectedOutput.length);
+    expect(output).toEqual(expect.arrayContaining(expectedOutput));
+  });
 });
 
 describe('cleanFile', () => {
