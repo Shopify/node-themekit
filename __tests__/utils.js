@@ -60,7 +60,7 @@ describe('cleanFile', () => {
     fsMock.restore();
   });
 
-  test('successfully removes file if it exists', async () => {
+  test('successfully removes file if it exists', () => {
     // arrange
     fsMock({
       'path/to/executable': {
@@ -85,7 +85,7 @@ describe('cleanFile', () => {
     expect(unlink).toBeCalledWith(pathToExecutable);
   });
 
-  test('does not throw if path does not exist', async () => {
+  test('does not throw if path does not exist', () => {
     // arrange
     fsMock({
       'path/to/executable': {
