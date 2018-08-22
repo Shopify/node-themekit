@@ -1,26 +1,31 @@
-const path = require('path');
-
-const cfg = require('../lib/config');
 const themekit = require('../lib/themekit');
+const runExecutable = require('../lib/run-executable');
 
-jest.mock('child_process');
+jest.mock('../lib/run-executable');
 
 describe(('command'), () => {
-  test('passes correct args to child process', async () => {
+  test('forces no-update-notifier flag', async () => {
     // arrange
-    const args = ['version', '--no-update-notifier'];
-
+    const args = ['version', '--some-flag', '--no-update-notifier'];
     // act
-    const {spawn} = require('child_process');
-    await themekit.command('version');
+    await themekit.command('version', {
+      someFlag: true
+    });
 
     // assert
-    expect.assertions(1);
-    expect(spawn).toBeCalledWith(
-      path.join(cfg.destination, cfg.binName),
-      args,
-      {cwd: expect.any(String)},
-    );
+    expect(runExecutable).toBeCalledWith(args, expect.any(String), null);
+  });
+
+  test('passes cwd and logLevel properly to runExecutable', async () => {
+    // arrange
+    const cwd = process.cwd();
+    const logLevel = 'info';
+
+    // act
+    await themekit.command('version', null, {cwd, logLevel});
+
+    // assert
+    expect(runExecutable).toBeCalledWith(expect.any(Array), cwd, logLevel);
   });
 
   test('does not mutate input param', async () => {
@@ -32,7 +37,6 @@ describe(('command'), () => {
     await themekit.command('version', flags);
 
     // assert
-    expect.assertions(1);
     expect(flags).toMatchObject(flagsCopy);
   });
 });
