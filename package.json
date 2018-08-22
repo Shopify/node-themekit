@@ -14,8 +14,8 @@
     "simple-spinner": "0.0.5"
   },
   "devDependencies": {
-    "eslint": "3.7.1",
-    "eslint-plugin-shopify": "15.0.3",
+    "eslint": "5.4.0",
+    "eslint-plugin-shopify": "23.1.0",
     "jest": "^23.5.0",
     "mock-fs": "^4.6.0"
   },
@@ -23,8 +23,8 @@
     "postinstall": "node ./lib/cli.js install",
     "postversion": "node ./lib/cli.js install",
     "test": "jest",
-    "lint": "./node_modules/.bin/eslint --max-warnings 0 -c .eslintrc.json src/ test/",
-    "lint-allow-warning": "./node_modules/.bin/eslint -c .eslintrc.json src/ test/"
+    "lint": "./node_modules/.bin/eslint --max-warnings 0 -c .eslintrc.json lib/ __tests__/",
+    "lint-allow-warning": "./node_modules/.bin/eslint -c .eslintrc.json lib/ __tests__/"
   },
   "keywords": [
     "themekit",
