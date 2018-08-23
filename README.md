@@ -119,7 +119,7 @@ For a complete list of commands and flags, see the [Theme Kit documentation](htt
 $ shopify-themekit <args>
 ```
 
-This CLI component of this package is intended to be used with NPM scripts. It functions exactly the same as If you plan on using the command line interface heavily, please refer to [the original Theme Kit repository](http://shopify.github.io/themekit).
+This CLI component of this package is intended to be used with NPM scripts. It functions exactly the same as the original Theme Kit binary. If you plan on using the command line interface heavily, please refer to [the original Theme Kit repository](http://shopify.github.io/themekit).
 
 ## License
 
