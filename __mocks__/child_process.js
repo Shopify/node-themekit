@@ -1,12 +1,10 @@
-const noop = require('../lib/noop');
-
 module.exports = {
   spawn: jest.fn(() => ({
     on: jest.fn((evt, cb) => {
       if (evt === 'close') {
         return cb();
       }
-      return noop;
+      return () => { /* noop*/ };
     }),
     stdout: {
       setEncoding: jest.fn(),
