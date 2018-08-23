@@ -3,7 +3,7 @@ const runExecutable = require('../lib/run-executable');
 
 jest.mock('../lib/run-executable');
 
-describe(('command'), () => {
+describe('command', () => {
   test('forces no-update-notifier flag', async () => {
     const args = ['version', '--some-flag', '--no-update-notifier'];
 
