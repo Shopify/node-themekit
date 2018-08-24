@@ -1,3 +1,1 @@
-module.exports = {
-  command: require('./lib/command')
-};
+module.exports = require('./lib/themekit');
