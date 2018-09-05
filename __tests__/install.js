@@ -4,6 +4,13 @@ const {src, dest, path, run, use} = require('bin-wrapper');
 const install = require('../lib/install');
 
 jest.mock('../lib/utils');
+jest.mock('../lib/logger', () => {
+  return () => ({
+    error: jest.fn(),
+    info: jest.fn(),
+    silly: jest.fn()
+  });
+});
 jest.mock('../lib/config', () => {
   return {
     baseURL: 'example.com',
