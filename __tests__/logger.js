@@ -81,7 +81,7 @@ describe('logger', () => {
   });
 
   test('defaults to level 2 without input parameters', () => {
-    const log = logger('info');
+    const log = logger();
     const str = 'hello';
     const {error, info, silly} = log;
 

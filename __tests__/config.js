@@ -19,6 +19,6 @@ describe('config', () => {
     // require config after setting mock platform
     const config = require('../lib/config');
 
-    expect(config.binName === 'theme.exe').toBe(true);
+    expect(config.binName).toBe('theme.exe');
   });
 });
