@@ -24,7 +24,7 @@ $ npm install @shopify/themekit
 const themeKit = require('@shopify/themekit');
 
 await themeKit.command('version');
-//=> ThemeKit 0.8.0 darwin/amd64
+//=> ThemeKit 0.8.1 darwin/amd64
 ```
 
 ## Examples
