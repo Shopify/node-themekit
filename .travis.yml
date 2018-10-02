@@ -1,3 +1,7 @@
 language: node_js
 node_js:
-- lts/*
+  - lts/*
+
+script:
+  - npm test
+  - npm run lint
