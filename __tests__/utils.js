@@ -6,9 +6,9 @@ describe('getFlagArrayFromObject', () => {
   test('converts string flags correctly', () => {
     const input = {
       flagOne: 'value1',
-      flagTwo: 'value2',
+      flagTwo: 'value2'
     };
-    const expectedOutput = ['--flag-one', 'value1', '--flag-two', 'value2'];
+    const expectedOutput = ['--flagone', 'value1', '--flagtwo', 'value2'];
 
     const output = getFlagArrayFromObject(input);
 
@@ -21,9 +21,9 @@ describe('getFlagArrayFromObject', () => {
     const input = {
       flagOne: true,
       flagTwo: false,
-      flagThree: true,
+      flagThree: true
     };
-    const expectedOutput = ['--flag-one', '--flag-three'];
+    const expectedOutput = ['--flagone', '--flagthree'];
 
     const output = getFlagArrayFromObject(input);
 
@@ -34,9 +34,14 @@ describe('getFlagArrayFromObject', () => {
 
   test('correctly deconstructs ignoredFiles flag', () => {
     const input = {
-      ignoredFiles: ['file1', 'file2']
+      ignoredFile: ['file1', 'file2']
     };
-    const expectedOutput = ['--ignored-file', 'file1', '--ignored-file', 'file2'];
+    const expectedOutput = [
+      '--ignored-file',
+      'file1',
+      '--ignored-file',
+      'file2'
+    ];
 
     const output = getFlagArrayFromObject(input);
 
@@ -67,7 +72,7 @@ describe('cleanFile', () => {
   test('successfully removes file if it exists', () => {
     fsMock({
       'path/to/executable': {
-        'my-exec': '...',
+        'my-exec': '...'
       }
     });
 
@@ -90,7 +95,7 @@ describe('cleanFile', () => {
   test('does not throw if path does not exist', () => {
     fsMock({
       'path/to/executable': {
-        'not-my-exec': '...',
+        'not-my-exec': '...'
       }
     });
 
