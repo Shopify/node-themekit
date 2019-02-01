@@ -71,8 +71,8 @@ describe('themekit', () => {
 
   test('deploy all environments no delete', async () => {
     await themekit.command('deploy', {
-      allenvs: true,
-      nodelete: true
+      allEnvs: true,
+      noDelete: true
     });
 
     expect(spawn).toBeCalledWith(
@@ -197,7 +197,7 @@ describe('themekit', () => {
 
   test('open all flags', async () => {
     await themekit.command('open', {
-      allenvs: true,
+      allEnvs: true,
       browser: 'google-chrome',
       edit: true
     });
@@ -222,7 +222,7 @@ describe('themekit', () => {
   test('remove files all envs', async () => {
     await themekit.command('remove', {
       files: ['templates/404.liquid', 'templates/article.liquid'],
-      allenvs: true
+      allEnvs: true
     });
 
     expect(spawn).toBeCalledWith(
@@ -244,7 +244,7 @@ describe('themekit', () => {
   test('watch all flags', async () => {
     await themekit.command('watch', {
       notify: true,
-      allenvs: true
+      allEnvs: true
     });
 
     expect(spawn).toBeCalledWith(
