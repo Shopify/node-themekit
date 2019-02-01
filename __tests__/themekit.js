@@ -69,6 +69,28 @@ describe('themekit', () => {
     );
   });
 
+  test('deploy ignore files old themekit', async () => {
+    await themekit.command('deploy', {
+      ignoredFiles: ['templates/404.liquid', 'templates/article.liquid']
+    });
+
+    expect(spawn).toBeCalledWith(
+      pathToExecutable,
+      [
+        'deploy',
+        '--ignored-file',
+        'templates/404.liquid',
+        '--ignored-file',
+        'templates/article.liquid',
+        '--no-update-notifier'
+      ],
+      {
+        cwd,
+        stdio: ['inherit', 'inherit', 'pipe']
+      }
+    );
+  });
+
   test('deploy all environments no delete', async () => {
     await themekit.command('deploy', {
       allEnvs: true,
