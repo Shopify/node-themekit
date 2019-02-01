@@ -1,16 +1,14 @@
 const path = require('path');
+const {spawn} = require('child_process');
 const cfg = require('../lib/config');
 const themekit = require('../lib/themekit');
 
 jest.mock('child_process');
+const pathToExecutable = path.join(cfg.destination, cfg.binName);
+const cwd = process.cwd();
 
 describe('themekit', () => {
   test('configure', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('configure', {
       password: 'test',
       store: 'test.myshopify.com',
@@ -31,17 +29,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('deploy', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('deploy');
 
     expect(spawn).toBeCalledWith(
@@ -49,17 +42,12 @@ describe('themekit', () => {
       ['deploy', '--no-update-notifier'],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('deploy ignore files', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('deploy', {
       ignoredFile: ['templates/404.liquid', 'templates/article.liquid']
     });
@@ -76,17 +64,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('deploy all environments no delete', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('deploy', {
       allenvs: true,
       nodelete: true
@@ -97,17 +80,12 @@ describe('themekit', () => {
       ['deploy', '--allenvs', '--nodelete', '--no-update-notifier'],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('download', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('download');
 
     expect(spawn).toBeCalledWith(
@@ -115,17 +93,12 @@ describe('themekit', () => {
       ['download', '--no-update-notifier'],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('download few files', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('download', {
       files: ['templates/404.liquid', 'templates/article.liquid']
     });
@@ -140,42 +113,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
-      }
-    );
-  });
-
-  test('download few files', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
-    await themekit.command('download', {
-      files: ['templates/404.liquid', 'templates/article.liquid']
-    });
-
-    expect(spawn).toBeCalledWith(
-      pathToExecutable,
-      [
-        'download',
-        'templates/404.liquid',
-        'templates/article.liquid',
-        '--no-update-notifier'
-      ],
-      {
-        cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('get list', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('get', {
       list: true,
       password: 'test',
@@ -195,17 +138,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('get theme', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('get', {
       password: 'test',
       store: 'test.myshopify.com',
@@ -226,17 +164,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('new theme', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('new', {
       password: 'test',
       store: 'test.myshopify.com',
@@ -257,17 +190,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('open all flags', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('open', {
       allenvs: true,
       browser: 'google-chrome',
@@ -286,17 +214,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('remove files all envs', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('remove', {
       files: ['templates/404.liquid', 'templates/article.liquid'],
       allenvs: true
@@ -313,17 +236,12 @@ describe('themekit', () => {
       ],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
 
   test('watch all flags', async () => {
-    const {spawn} = require('child_process');
-
-    const pathToExecutable = path.join(cfg.destination, cfg.binName);
-    const cwd = process.cwd();
-
     await themekit.command('watch', {
       notify: true,
       allenvs: true
@@ -334,7 +252,7 @@ describe('themekit', () => {
       ['watch', '--notify', '--allenvs', '--no-update-notifier'],
       {
         cwd,
-        stdio: 'inherit'
+        stdio: ['inherit', 'inherit', 'pipe']
       }
     );
   });
