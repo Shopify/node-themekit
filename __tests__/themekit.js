@@ -71,7 +71,8 @@ describe('themekit', () => {
 
   test('deploy ignore files old themekit', async () => {
     await themekit.command('deploy', {
-      ignoredFiles: ['templates/404.liquid', 'templates/article.liquid']
+      ignoredFiles: ['templates/404.liquid', 'templates/article.liquid'],
+      ignoredFile: 'templates/403.liquid'
     });
 
     expect(spawn).toBeCalledWith(
@@ -82,6 +83,8 @@ describe('themekit', () => {
         'templates/404.liquid',
         '--ignored-file',
         'templates/article.liquid',
+        '--ignored-file',
+        'templates/403.liquid',
         '--no-update-notifier'
       ],
       {
