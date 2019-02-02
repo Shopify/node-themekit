@@ -34,7 +34,7 @@ describe('getFlagArrayFromObject', () => {
 
   test('correctly deconstructs ignoredFiles flag', () => {
     const input = {
-      ignoredFile: ['file1', 'file2']
+      ignoredFiles: ['file1', 'file2']
     };
     const expectedOutput = [
       '--ignored-file',

@@ -49,7 +49,7 @@ describe('themekit', () => {
 
   test('deploy ignore files', async () => {
     await themekit.command('deploy', {
-      ignoredFile: ['templates/404.liquid', 'templates/article.liquid']
+      ignoredFiles: ['templates/404.liquid', 'templates/article.liquid']
     });
 
     expect(spawn).toBeCalledWith(
@@ -69,7 +69,7 @@ describe('themekit', () => {
     );
   });
 
-  test('deploy ignore files old themekit', async () => {
+  test('deploy ignore files and ignore file', async () => {
     await themekit.command('deploy', {
       ignoredFiles: ['templates/404.liquid', 'templates/article.liquid'],
       ignoredFile: 'templates/403.liquid'
