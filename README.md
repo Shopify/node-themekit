@@ -90,10 +90,10 @@ Executes command with arguments using the Theme Kit binary.
 
   Flags to pass into the command.
   
-  All flags specified in the Theme Kit documentation are available, but in `camelCase` rather than in `--flag-form`.
+  All flags specified in the Theme Kit documentation are available, but in `camelCase` rather than in `--flagform`.
   ```javascript
   {
-    noIgnore: true, // --no-ignore
+    noIgnore: true, // --noignore
     env: 'development' // --env=development
   }
   ```
