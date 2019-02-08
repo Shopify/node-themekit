@@ -93,7 +93,7 @@ Executes command with arguments using the Theme Kit binary.
   All flags specified in the Theme Kit documentation are available, but in `camelCase` rather than in `--flagform`.
   ```javascript
   {
-    noIgnore: true, // --noignore
+    noIgnore: true, // --no-ignore
     env: 'development' // --env=development
   }
   ```
