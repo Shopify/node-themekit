@@ -69,6 +69,21 @@ describe('themekit', () => {
     );
   });
 
+  test('deploy ignore files', async () => {
+    await themekit.command('deploy', {
+      noIgnore: true
+    });
+
+    expect(spawn).toBeCalledWith(
+      pathToExecutable,
+      ['deploy', '--no-ignore', '--no-update-notifier'],
+      {
+        cwd,
+        stdio: ['inherit', 'inherit', 'pipe']
+      }
+    );
+  });
+
   test('deploy ignore files and ignore file', async () => {
     await themekit.command('deploy', {
       ignoredFiles: ['templates/404.liquid', 'templates/article.liquid'],
