@@ -15,6 +15,9 @@ describe('runExecutable', () => {
 
     await runExecutable(args, cwd);
 
-    expect(spawn).toBeCalledWith(pathToExecutable, args, {cwd, stdio: 'inherit'});
+    expect(spawn).toBeCalledWith(pathToExecutable, args, {
+      cwd,
+      stdio: ['inherit', 'inherit', 'pipe']
+    });
   });
 });

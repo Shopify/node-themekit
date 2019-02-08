@@ -5,7 +5,7 @@ jest.mock('../lib/run-executable');
 
 describe('command', () => {
   test('forces no-update-notifier flag', async () => {
-    const args = ['version', '--some-flag', '--no-update-notifier'];
+    const args = ['version', '--someflag', '--no-update-notifier'];
 
     await themekit.command('version', {
       someFlag: true
@@ -32,4 +32,3 @@ describe('command', () => {
     expect(flags).toMatchObject(flagsCopy);
   });
 });
-
