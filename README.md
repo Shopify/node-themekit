@@ -121,6 +121,22 @@ $ shopify-themekit <args>
 
 This CLI component of this package is intended to be used with NPM scripts. It functions exactly the same as the original Theme Kit binary. If you plan on using the command line interface heavily, please refer to [the original Theme Kit repository](http://shopify.github.io/themekit).
 
+## Contributing
+
+### Releases
+This information is for project maintainers:
+
+Requirements
+
+- Have access to [`npmjs`](https://www.npmjs.com/) Shopify organization
+- Yarn must be installed
+
+Instructions
+
+- Bump the version in [`package.json`](https://github.com/Shopify/node-themekit/blob/08d421f67adf1e5c61a6bd600e40c3e0f3924216/package.json#L3)
+- Create a release on Github as well as tagging the release
+- Publish the package on [`npmjs`](https://www.npmjs.com/)
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/Shopify/node-themekit/blob/master/LICENSE.md) for details.
