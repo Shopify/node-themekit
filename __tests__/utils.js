@@ -1,5 +1,7 @@
-const fsMock = require('mock-fs');
 const fs = require('fs');
+
+const fsMock = require('mock-fs');
+
 const {cleanFile, getFlagArrayFromObject} = require('../lib/utils');
 
 describe('getFlagArrayFromObject', () => {

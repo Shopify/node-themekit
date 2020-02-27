@@ -9,15 +9,15 @@
   "license": "MIT",
   "author": "Shopify Inc.",
   "dependencies": {
-    "bin-wrapper": "3.0.2",
-    "minimist": "1.2.0",
-    "simple-spinner": "0.0.5"
+    "bin-wrapper": "^4.1.0",
+    "minimist": "^1.2.0",
+    "simple-spinner": "^0.0.5"
   },
   "devDependencies": {
-    "eslint": "^4.7.1",
-    "eslint-plugin-shopify": "23.1.0",
-    "jest": "^23.5.0",
-    "mock-fs": "^4.6.0"
+    "eslint": "^6.8.0",
+    "eslint-plugin-shopify": "^35.0.0",
+    "jest": "^25.1.0",
+    "mock-fs": "^4.11.0"
   },
   "scripts": {
     "postinstall": "node ./lib/cli.js install",
