@@ -2,8 +2,7 @@
 const src = jest.fn(() => binWrapperObject);
 const dest = jest.fn(() => binWrapperObject);
 const path = jest.fn(() => binWrapperObject);
-const run = jest.fn((_, cb) => {
-  cb();
+const run = jest.fn(async () => {
   return binWrapperObject;
 });
 const use = jest.fn(() => binWrapperObject);
