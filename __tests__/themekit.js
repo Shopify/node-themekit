@@ -1,5 +1,6 @@
 const path = require('path');
 const {spawn} = require('child_process');
+
 const cfg = require('../lib/config');
 const themekit = require('../lib/themekit');
 

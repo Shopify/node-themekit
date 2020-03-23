@@ -62,22 +62,25 @@ describe('install', () => {
 
   test('runs after installation', async () => {
     await install();
-    expect(run).toHaveBeenCalledWith(['version'], expect.any(Function));
+    expect(run).toHaveBeenCalledWith(['version']);
     expect(run).toHaveBeenCalledTimes(1);
   });
 
   test('runs after installation', async () => {
     await install();
-    expect(run).toHaveBeenCalledWith(['version'], expect.any(Function));
+    expect(run).toHaveBeenCalledWith(['version']);
     expect(run).toHaveBeenCalledTimes(1);
   });
 
-  test('rejects promise if error in installation run', () => {
+  test('rejects promise if error in installation run', async () => {
     const errorMessage = 'some err';
-    run.mockImplementationOnce((_, cb) => {
-      cb(errorMessage);
-    });
+    run.mockRejectedValue(errorMessage);
 
-    expect(install()).rejects.toMatch(errorMessage);
+    expect.assertions(1);
+    try {
+      await install();
+    } catch (err) {
+      expect(err.message).toMatch(errorMessage);
+    }
   });
 });
