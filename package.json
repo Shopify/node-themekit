@@ -1,5 +1,8 @@
 {
   "name": "@shopify/themekit",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.1.4",
   "description": "Node version of ThemeKit",
   "bin": {
