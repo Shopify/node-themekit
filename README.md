@@ -129,7 +129,7 @@ This information is for project maintainers:
 
 Instructions
 
-- Use `[npm version](https://docs.npmjs.com/cli/version)` to update the version.
+- Use [`npm version`](https://docs.npmjs.com/cli/version) to update the version.
 - Commit and push the changes.
 - Release to npmjs.com by triggering a ShipIt deploy
 - Create a release on GitHub (ShipIt will tag the release automatically).
