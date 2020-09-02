@@ -134,7 +134,7 @@ Requirements
 Instructions
 
 - Bump the version in [`package.json`](https://github.com/Shopify/node-themekit/blob/08d421f67adf1e5c61a6bd600e40c3e0f3924216/package.json#L3)
-- Create a release on Github as well as tagging the release
+- Create a release on GitHub as well as tagging the release
 - Publish the package on [`npmjs`](https://www.npmjs.com/)
 
 ## License
