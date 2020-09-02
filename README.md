@@ -124,18 +124,16 @@ This CLI component of this package is intended to be used with NPM scripts. It f
 ## Contributing
 
 ### Releases
+
 This information is for project maintainers:
-
-Requirements
-
-- Have access to [`npmjs`](https://www.npmjs.com/) Shopify organization
-- Yarn must be installed
 
 Instructions
 
-- Bump the version in [`package.json`](https://github.com/Shopify/node-themekit/blob/08d421f67adf1e5c61a6bd600e40c3e0f3924216/package.json#L3)
-- Create a release on GitHub as well as tagging the release
-- Publish the package on [`npmjs`](https://www.npmjs.com/)
+- Bump the version in [`package.json`](https://github.com/Shopify/node-themekit/blob/master/package.json)
+- Run `npm install` to update `package-lock.json`
+- Commit and push the changes.
+- Release to npjs.com by triggering a ShipIt deploy
+- Create a release on GitHub (ShipIt will tag the release automatically).
 
 ## License
 
