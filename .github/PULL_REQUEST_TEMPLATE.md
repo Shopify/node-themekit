@@ -10,6 +10,3 @@ For contributors:
 For maintainers:
 - [ ] I have :tophat:'d these changes.
 - [ ] I have bumped the `package.json` version in a separate PR, if applicable.
-
-Considerations:
-- Changes may require updates to the [Slate docs](https://shopify.github.io/slate/) or the [`@shopify/slate-tools`](https://github.com/Shopify/slate/tree/master/packages/slate-tools) package.
