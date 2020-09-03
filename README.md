@@ -131,8 +131,8 @@ Instructions
 
 - Use [`npm version`](https://docs.npmjs.com/cli/version) to update the version.
 - Commit and push the changes.
-- Release to npmjs.com by triggering a ShipIt deploy
-- Create a release on GitHub (ShipIt will tag the release automatically).
+- Release to npmjs.com by triggering a Shipit deploy
+- Create a release on GitHub (Shipit will tag the release automatically).
 
 ## License
 
