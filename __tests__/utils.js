@@ -19,6 +19,17 @@ describe('getFlagArrayFromObject', () => {
     expect(output).toEqual(expect.arrayContaining(expectedOutput));
   });
 
+  test('converts allow-live flag', () => {
+    const input = {
+      allowLive: true
+    };
+
+    const output = getFlagArrayFromObject(input);
+
+    expect(output).toEqual(['--allow-live']);
+  });
+
+
   test('converts boolean flags correctly', () => {
     const input = {
       flagOne: true,
