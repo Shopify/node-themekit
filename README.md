@@ -129,10 +129,12 @@ This information is for project maintainers:
 
 Instructions
 
-- Use [`npm version`](https://docs.npmjs.com/cli/version) to update the version.
-- Commit and push the changes.
-- Release to npmjs.com by triggering a Shipit deploy
-- Create a release on GitHub (Shipit will tag the release automatically).
+- Use [`npm version <major|minor|patch>`](https://docs.npmjs.com/cli/version) to update the version in `package.json` and `package-lock.json`.
+- Push the changes and the tag with `git push --follow-tags`
+- Open new PR corresponding to the new release, and merge once approved.
+- Release to npmjs.com by triggering a Shipit deploy of the master branch.
+- Visit https://www.npmjs.com/package/@shopify/themekit to confirm the new version is listed.
+- Create a release on GitHub.
 
 ## License
 
