@@ -12,6 +12,7 @@
   "license": "MIT",
   "author": "Shopify Inc.",
   "dependencies": {
+    "bin-build": "^3.0.0",
     "bin-wrapper": "^4.1.0",
     "minimist": "^1.2.5",
     "simple-spinner": "^0.0.5"
