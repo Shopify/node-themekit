@@ -78,7 +78,7 @@ Deploy theme to production via NPM scripts.
 
 ## API
 
-### `command(command[, flags][, options)`
+### `command(command[, flags][, options])`
 
 Executes command with arguments using the Theme Kit binary.
 
