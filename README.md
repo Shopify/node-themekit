@@ -76,11 +76,24 @@ Deploy theme to production via NPM scripts.
 }
 ```
 
+#### Example 5
+
+Get the list of themes
+
+```javascript
+const themeKit = require('@shopify/themekit');
+
+const response = await themeKit.command('get', {
+  list: true,
+  env: 'staging'
+});
+```
+
 ## API
 
 ### `command(command[, flags][, options)`
 
-Executes command with arguments using the Theme Kit binary.
+Executes command with arguments using the Theme Kit binary. Returns stdout of the command.
 
 - command `<String>`
 
