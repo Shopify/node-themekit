@@ -141,3 +141,5 @@ Instructions
 MIT, see [LICENSE.md](http://github.com/Shopify/node-themekit/blob/main/LICENSE.md) for details.
 
 <img src="https://cdn.shopify.com/shopify-marketing_assets/builds/19.0.0/shopify-full-color-black.svg" width="200" />
+
+
