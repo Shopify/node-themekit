@@ -5,7 +5,7 @@
 
 ### Checklist
 For contributors:
-- [ ] I have updated the documentation in the [README file](https://github.com/Shopify/node-themekit/blob/master/README.md) to reflect these changes, if applicable.
+- [ ] I have updated the documentation in the [README file](https://github.com/Shopify/node-themekit/blob/main/README.md) to reflect these changes, if applicable.
 
 For maintainers:
 - [ ] I have :tophat:'d these changes.
