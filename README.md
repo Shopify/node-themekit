@@ -11,7 +11,7 @@ Node wrapper for [Theme Kit](http://shopify.github.io/themekit/).
 - [Examples](#examples)
 - [API](#api)
 - [CLI](#cli)
-- [License](http://github.com/Shopify/node-themekit/blob/master/LICENSE.md)
+- [License](http://github.com/Shopify/node-themekit/blob/main/LICENSE.md)
 
 ## Installation
 
@@ -132,12 +132,12 @@ Instructions
 - Use [`npm version <major|minor|patch>`](https://docs.npmjs.com/cli/version) to update the version in `package.json` and `package-lock.json`.
 - Push the changes and the tag with `git push --follow-tags`
 - Open new PR corresponding to the new release, and merge once approved.
-- Release to npmjs.com by triggering a Shipit deploy of the master branch.
+- Release to npmjs.com by triggering a Shipit deploy of the main branch.
 - Visit https://www.npmjs.com/package/@shopify/themekit to confirm the new version is listed.
 - Create a release on GitHub.
 
 ## License
 
-MIT, see [LICENSE.md](http://github.com/Shopify/node-themekit/blob/master/LICENSE.md) for details.
+MIT, see [LICENSE.md](http://github.com/Shopify/node-themekit/blob/main/LICENSE.md) for details.
 
 <img src="https://cdn.shopify.com/shopify-marketing_assets/builds/19.0.0/shopify-full-color-black.svg" width="200" />
