@@ -1,3 +1,7 @@
+> [!WARNING]
+> Theme Kit has been deprecated (and thus `node-themekit`). Theme developers should use [Shopify CLI](https://shopify.dev/docs/storefronts/themes/tools/cli)
+> for Shopify theme development, as parts of Theme Kit will become unsupported and may stop working soon.
+
 [![npm version](https://badge.fury.io/js/%40shopify%2Fthemekit.svg)](https://badge.fury.io/js/%40shopify%2Fthemekit)
 
 # @shopify/themekit
